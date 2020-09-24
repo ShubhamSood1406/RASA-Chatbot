@@ -1,0 +1,90 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- user_chose_city
+- user_wants_to_see_cities
+- goodbye
+- greet
+- user_chose_event
+- affirm
+- bot_challenge
+- user_cant_see_their_city
+- user_does_not_want_to_book
+- user_see_ticket
+- user_chose_ticket
+- user_get_mail
+- mood_great
+responses:
+  utter_display_cities:
+  - buttons:
+    - payload: Show me the events in Delhi
+      title: Delhi
+    - payload: Show me the events in Ahmedabad
+      title: Ahmedabad
+    - payload: Show me the events in Mumbai
+      title: Mumbai
+    - payload: Show me the events in Bangalore
+      title: Bangalore
+    - payload: Show me the events in Goa
+      title: Goa
+    - payload: Show me the events in Kolkata
+      title: Kolkata
+    - payload: Show me the events in Chandigarh
+      title: Chandigarh
+    - payload: Show me the events in Online
+      title: Online Event
+    text: Please select the city for which you want to Book the ticket of an Event.
+  utter_confirm:
+  - buttons:
+    - payload: Yes I would like to book ticket.
+      title: Yes
+    - payload: I dont want to.
+      title: No
+    text: Proceed for Bookings?.
+  utter_show_ticket:
+  - buttons:
+    - payload: 1 ticket
+      title: 1 Ticket
+    - payload: 2 ticket
+      title: 2 Tickets
+    - payload: 3 ticket
+      title: 3 Tickets
+    - payload: 4 ticket
+      title: 4 Tickets
+    text: Please select the number of ticket to be booked.
+  utter_send_mail:
+  - text: Please enter your complete mail ID with @gmail.com , @yahoo.com etc
+  utter_goodbye:
+  - text: Bye
+  - text: GoodBye
+  - text: See you
+  utter_greet:
+  - buttons:
+    - payload: Yes I would like to see all the cities available
+      title: Yes
+    - payload: Not now.
+      title: No
+    text: Hey! want to book ticket for an event going to held in your City.
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa. But can respond because of Shubham.
+  utter_sorry:
+  - text: Sorry! for the inconvenience. We are currently expanding our services.
+  utter_thanks_message:
+  - text: Absolutely Okay. I am always here, you can book tickets later.
+  - text: No problem. You can book later.
+actions:
+- display_event_details
+- event_chose_by_user
+- send_email
+- utter_display_cities
+- utter_goodbye
+- utter_greet
+- utter_iamabot
+- utter_sorry
+- utter_thanks_message
+- utter_confirm
+- utter_show_ticket
+- ticket_chose_by_user
+- utter_send_mail
+- user_get_ticket_on_mail
