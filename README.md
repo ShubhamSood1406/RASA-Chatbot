@@ -8,6 +8,3 @@ This Chatbot can able to understand the user intent and can reply accordingly fo
 </b>
 
 [![You can see the Chatbot working here](https://img.youtube.com/vi/Td-azDBqt5Y/0.jpg)](https://www.youtube.com/watch?v=Td-azDBqt5Y)
-
-[You can see the Chatbot working here](<iframe width="560" height="315" src="https://www.youtube.com/embed/Td-azDBqt5Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>)
-
