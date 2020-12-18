@@ -4,29 +4,12 @@
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/core/actions/#custom-actions/
 
-
-# This is a simple example for a custom action which utters "Hello World!"
-
 from typing import Any, Text, Dict, List
 import numpy as np
 import sqlite3  # to connect to db
 import smtplib  # to send mail
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
 
 class DisplayEventDetails(Action):
 
@@ -368,18 +351,11 @@ class UserGetTicketOnMail(Action):
             print("total:", total)
             print("total amt: ", total_amt)
 
-                # content_text = "Your ticket is booked for " + str(event_chosen) + " that is on " + str(date_time) + "." \
-                #                     + " Your total price for tickets is ₹ " + str(total_amt) + " and your Ticket Id is " + str(id)
-                # dispatcher.utter_message(text=content_text)
-                # dispatcher.utter_message(text=content)
-
             toaddrs = user_input2
             print("toaddrs : ", toaddrs)
 
             fromaddr = 'shubham14600.ss@gmail.com'
-            #toaddrs = 'gottaname.m3@gmail.com'
 
-            #msg = "\n Your ticket is booked for " + str(event_chosen) + " that is on " + str(date_time) + "." + "\n Your total price for tickets is Rs. " + str(total_amt) + " and your Ticket Id is " + str(id) + "\n \nHappy Eventing with Us. :)"
             TEXT = "\n Your ticket is booked for " + str(event_chosen) + " that is on " + str(date_time) + "." + "\n Your total price for tickets is Rs. " + str(total_amt) + " and your Ticket Id is " + str(id) + "\n \nHappy Eventing with Us. :)"
             SUBJECT = "Your booked tickets from Eve"
             msg = 'Subject: {}\n\n{}'.format(SUBJECT,TEXT)
@@ -393,12 +369,6 @@ class UserGetTicketOnMail(Action):
             server.login(username, password)
             server.sendmail(fromaddr, toaddrs, msg)
             server.quit()
-                #content = "The order has been taken and the respective restaurent will be notified"
-
-                #content_text = "Your order has been received and your total order is " + str(total) + \
-                #               " and your bill number is " + str(bill_no)
-                #dispatcher.utter_message(text=content_text)
-                #dispatcher.utter_message(text=content)
 
             content = "Your tickets has been booked and send on your Mail. \nDon't forget to mark the dates on the calender to be a part of this Amazing Event. \nThank You"
 
